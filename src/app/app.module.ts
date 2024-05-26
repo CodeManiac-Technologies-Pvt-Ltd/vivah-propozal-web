@@ -6,18 +6,36 @@ import { AppComponent } from './app.component';
 import { HompageComponent } from './components/hompage/hompage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { ContactComponent } from './components/pages/contact/contact.component';
+import { NavigationComponent } from './components/pages/navigation/navigation.component';
+import { HeaderComponent } from './components/pages/header/header.component';
+import { FooterComponent } from './components/pages/footer/footer.component';
+import { RegisterComponent } from './components/panel/register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatInputModule } from '@angular/material/input'
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HompageComponent
+    HompageComponent,
+    ContactComponent,
+    NavigationComponent,
+    HeaderComponent,
+    FooterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatInputModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

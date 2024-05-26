@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="row" style="margin-top: 10px">
+    </div>
+    <app-header></app-header>
+    <app-navigation></app-navigation>
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
+    <h2 class="main1">Follow Few Steps to Register</h2>
+    <form [formGroup]="form_register" (ngSubmit)="on_register_submit" enctype="multipart/form-data" accept-charset="utf-8">
+        <div class="borderbox">
+            <div class="registration">
+                <h5 class="heading">Personal Information</h5>
+                <div class="large-12 columns">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-10"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label class="inline">Username<span class="err_span">&nbsp;*</span></label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" formControlName="txt_username" class="form-control" maxlength="50" />
+                                    <div class="err_span" *ngIf="isSubmitted && form_register_controls['txt_username'].errors">
+                                        <div *ngIf="form_register_controls['txt_username'].errors['required']">Username required.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="inline">Email Address<span class="err_span">&nbsp;*</span></label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" formControlName="txt_email" class="form-control" maxlength="50">
+                                    <div class="err_span" *ngIf="isSubmitted && form_register_controls['txt_email'].errors">
+                                        <div *ngIf="form_register_controls['txt_email'].errors['required']">Email address required.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label class="inline">Password<span class="err_span">&nbsp;*</span></label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="password" formControlName="txt_password" class="form-control" maxlength="20">
+                                    <div class="err_span" *ngIf="isSubmitted && form_register_controls['txt_password'].errors">
+                                        <div *ngIf="form_register_controls['txt_password'].errors['required']">Password required.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="inline">Re-Password<span class="err_span">&nbsp;*</span></label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="password" formControlName="txt_repassword" class="form-control" maxlength="20">
+                                    <div class="err_span" *ngIf="isSubmitted && form_register_controls['txt_repassword'].errors">
+                                        <div *ngIf="form_register_controls['txt_repassword'].errors['required']">Re-password required.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label class="inline">Full Name<span class="err_span">&nbsp;*</span></label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" formControlName="txt_full_name" class="form-control">
+                                    <div class="err_span" *ngIf="isSubmitted && form_register_controls['txt_full_name'].errors">
+                                        <div *ngIf="form_register_controls['txt_full_name'].errors['required']">Full name required.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="inline">Gender<span class="err_span">&nbsp;*</span></label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select formControlName="select_gender" class="form-control">
+                                        <option value="">Select gender</option>
+                                        <option *ngFor="let gender of genderList" value={{gender.id}}>{{gender.name}}</option>
+                                    </select>
+                                     <div class="err_span" *ngIf="isSubmitted && form_register_controls['select_gender'].errors">
+                                        <div *ngIf="form_register_controls['select_gender'].errors['required']">Religion is required.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label class="inline">Date of Birth<span class="err_span">&nbsp;*</span></label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input matInput [matDatepicker]="picker" formControlName="date_of_birth"/>
+                                    <mat-hint>MM/DD/YYYY</mat-hint>
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                    <div class="err_span" *ngIf="isSubmitted && form_register_controls['date_of_birth'].errors">
+                                        <div *ngIf="form_register_controls['date_of_birth'].errors['required']">Date of birth is required.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="inline">Time of Birth<span class="err_span">&nbsp;*</span></label>
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

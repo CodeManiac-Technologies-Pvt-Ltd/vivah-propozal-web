@@ -1,109 +1,7 @@
 <div class="container">
     <div class="row" style="margin-top: 10px"></div>
-    <div class="row" style="margin-bottom: 10px;">
-        <div class="col-md-8">
-            <div class="row">
-                <div class="col-md-6">
-                    <a>
-                        <img src="assets/images/logo.png" alt="vivah propozal - Matrimonials logo" class="img-responsive" />
-                    </a>
-                </div>
-                <div class="col-md-4" style="margin-left: 0px">
-                    <span class="headertop"> Get Married ! </span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 hidden-sm hidden-xs">
-            <form [formGroup] = "form_homepage_login" (ngSubmit)="onLoginSubmit(form_homepage_login)">
-                <div class="row">
-                    <div class="col-md-3">
-                        <label for="txt_username" class="control-label">Username</label>
-                    </div>
-                    <div class="col-md-9">
-                        <input type="text" formControlName="txt_username" class="form-control" [ngClass]="{'is-invalid': is_submitted && form_hompage_login_controls['txt_username'].errors}" placeholder="Enter username." autofocus>
-
-                        <div *ngIf="is_submitted && form_hompage_login_controls['txt_username'].errors" class="invalid-feedback">
-                            <div *ngIf="form_hompage_login_controls['txt_username'].errors['required']">
-                                Username required.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 5px">
-                    <div class="col-md-3">
-                        <label for="txt_password" class="control-label">Password</label>
-                    </div>
-                    <div class="col-md-9">
-                        <input type="password" formControlName="txt_password" class="form-control" [ngClass]="{'is-invalid': is_submitted && form_hompage_login_controls['txt_password'].errors}" placeholder="Enter password." autofocus>
-
-                        <div *ngIf="is_submitted && form_hompage_login_controls['txt_password'].errors" class="invalid-feedback">
-                            <div *ngIf="form_hompage_login_controls['txt_password'].errors['required']">
-                                Password required.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-right">
-                        <a href="#" tabindex="4">Forgot Password ?</a>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="#" class="navbar-brand">Menu</a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="#">Register</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Regular Search</a></li>
-                                <li><a href="#">Advance Search</a></li>
-                                <li><a href="#">InterFaith Search</a></li>
-                                <li><a href="#">ID Search</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Franchise <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Find Franchise</a></li>
-                                <li><a href="#">Franchise Help</a></li>
-                                <li><a href="#">Franchise Opportunities</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Brides</a></li>
-                        <li><a href="#">Grooms</a></li>
-                        <li><a href="#" class="upper-top">Membership Plans</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li class="dropdown">
-                            <a href="blog.html" class="dropdown-toggle" data-toggle="dropdown" role="button">Blog<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Success Story</a></li>
-                                <li><a href="#">Tell your story</a></li>
-								<li><a href="#">Blogs</a></li>  
-                            </ul>
-                        </li>
-                        <li><a href="#">Login</a></li>
-                        <li> <a title="Feedback" href="#">Feedback</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+    <app-header></app-header>
+    <app-navigation></app-navigation>
     <div class="row">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -169,77 +67,63 @@
                             <div class="panel-body">
                                 <div role="tabpanel">
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation">
-                                            <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">ID Search</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Quick Search</a>
-                                        </li>
+                                        <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">ID Search</a></li>
+                                        <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Quick Search</a></li>
                                     </ul>
                                     <div class="tab-content">
-                                        <div class="tab-panel active" role="tabpanel" id="tab1">
-                                            <div class="panel" style="margin-bottom: 0px;">
-                                                <div class="panel-body" style="padding-bottom: 0px;">
+                                        <div role="tabpanel" class="tab-pane active" id="tab1">
+                                            <div class="panel" style="margin-bottom : 0px;">
+                                                <div class="panel-body" style="padding-bottom: 0px">
                                                     <form [formGroup]="form_regular_search" (ngSubmit)="onRegularSearch(form_regular_search)">
-                                                        <div class="form-group">
+                                                        <div class="from-group">
                                                             <div class="row">
                                                                 <div class="col-md-3">
                                                                     <label for="male" class="control-label">Select</label>
                                                                 </div>
                                                                 <div class="col-md-9">
                                                                     <div class="col-md-6">
-                                                                        <input type="radio" id="male" class="rinline" formControlName="gender" value="1" >
+                                                                        <input type="radio" class="rinline" value="1" formControlName="gender" />
                                                                         <label for="male" class="inline">Groom</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        <input type="radio" id="female" class="rinline" formControlName="gender" value="2">
-                                                                        <label for="male" class="inline">Bride</label>
+                                                                        <input type="radio" class="inline" value="2" formControlName="gender" checked="checked" />
+                                                                        <label for="female" class="inline">Bride</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <br />
-                                                        <div class="form-group">
+                                                        <br>
+                                                        <div class="from-group">
                                                             <div class="row">
                                                                 <div class="col-md-3">
-                                                                    <label for="part_religion_multipl" class="control-label">Religion</label>
+                                                                    <label class="control-label">Religion</label>
                                                                 </div>
                                                                 <div class="col-md-9">
-                                                                    <ng-multiselect-dropdown id="part_religion_multipl" [settings]="dropDownSettings" [data]="religion_list" formControlName="religionDropDown" [placeholder]="'Select Religion'"
-                                                                    (onSelect)="onReligionItemSelect($event)"
-                                                                    (onSelectAll)="onReligionSelectAll($event)"
-                                                                    (onDeSelect)="onReligionItemDeSelect($event)"
-                                                                    (onDeSelectAll)="onReligionUnSelectAll()"
-                                                                    ></ng-multiselect-dropdown>
+                                                                    <ng-multiselect-dropdown [settings]="dropDownSettings" [data]="religion_list" formControlName="religionDropDown">
+                                                                    </ng-multiselect-dropdown>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <br />
-                                                        <div class="form-group">
+                                                        <br>
+                                                        <div class="from-group">
                                                             <div class="row">
                                                                 <div class="col-md-3">
                                                                     <label for="part_caste_multipl" class="control-label">Caste</label>
                                                                 </div>
                                                                 <div class="col-md-9">
-                                                                    <ng-multiselect-dropdown
-                                                                        id="part_caste_multipl"
-                                                                        [settings]="dropDownSettings"
-                                                                        [data]="caste_list"
-                                                                        [placeholder]="'Select Caste'"
-                                                                        formControlName="casteDropDown"
-                                                                        (onSelect)="onCasteItemSelect($event)"
-                                                                        (onSelectAll)="onCasteSelectAll($event)"
-                                                                        (onDeSelect)="onCasteItemDeSelect($event)"
-                                                                        (onDeSelectAll)="onCasteUnSelectAll()"
-                                                                    ></ng-multiselect-dropdown>
+                                                                    <ng-multiselect-dropdown [settings]="dropDownSettings" [data]="caste_list" formControlName="casteDropDown">
+                                                                    </ng-multiselect-dropdown>
+                                                                    <input type="hidden" name="submit" value="Search" />
+                                                                    <input type="hidden" name="page_number" value="" />
+                                                                    <input type="hidden" name="records" value="10" />
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <br />
+                                                        <br>
                                                         <div class="form-group">
                                                             <div class="row">
                                                                 <div class="col-md-12 text-center">
-                                                                    <button type="button" class="btn btn-default"> Search </button>
+                                                                    <input type="submit" class="btn btn-default" value="Search" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -247,30 +131,25 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-panel" id="tab2">
+                                        <div role="tabpanel" class="tab-pane" id="tab2">
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <form [formGroup]="form_id_search" (ngSubmit)="onIdSearch(form_id_search)">
-                                                        <div class="form-group">
+                                                        <div class="from-group">
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <label class="control-label">Profile Id</label>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <input type="text" formControlName="profile_id" class="form-control">
-                                                                    <div *ngIf="is_submitted && form_id_search_controls['profile_id'].errors" class="invalid-feedback">
-                                                                        <div *ngIf="form_id_search_controls['profile_id'].errors['required']">
-                                                                            Profile id required.
-                                                                        </div>
-                                                                    </div>
+                                                                    <input type="text" formControlName="profile_id" placeholder="Enter Profile Id" class="form-control" />
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <br/>
+                                                        <br>
                                                         <div class="form-group">
                                                             <div class="row">
                                                                 <div class="col-md-12 text-center">
-                                                                    <button type="button" class="btn btn-default">Search</button>
+                                                                    <input type="submit" class="btn btn-default" value="Search" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -295,13 +174,15 @@
                                                 <i class="fa fa-edit fa-3x"></i>
                                             </div>
                                             <div class="col-md-9 col-xs-9">
-                                                <h2 class="hometomargin">
-                                                    <a href="#">Register Now</a>
+                                                <h2 class="hometopmargin">
+                                                    <a href="register.html">Register Now</a>
                                                 </h2>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12 justify">Paid Members to get Additional Contacts of 24 Profiles absolutely Free, Yearly.</div>
+                                            <div class="col-md-12 text-justify">
+                                                Paid Members to get Additional Contacts of 24 Profiles absolutely Free, Yearly.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -313,7 +194,11 @@
                                             <div class="col-md-3 col-xs-3">
                                                 <i class="fa fa-search-plus fa-3x"></i>
                                             </div>
-                                            <div class="col-md-9 col-xs-9"><h2 class="hometopmargin"><a href="#">Search</a></h2></div>
+                                            <div class="col-md-9 col-xs-9">
+                                                <h2 class="hometopmargin">
+                                                    <a href="regularSearch.html">Search</a>
+                                                </h2>
+                                            </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12 text-justify">
@@ -329,21 +214,47 @@
                                 <div class="panel">
                                     <div class="panel-body">
                                         <div class="row">
-                                            <div class="col-md-3 col-xs 3">
+                                            <div class="col-md-3 col-xs-3">
                                                 <i class="fa fa-phone fa-3x"></i>
-                                                <div class="col-md-9 col-xs-9"><h2 class="hometopmargin"><a href="#">Contact Us</a></h2></div>
+                                            </div>
+                                            <div class="col-md-9 col-xs-9">
+                                                <h2 class="hometopmargin">
+                                                    <a href="contact.html">Contact Us</a>
+                                                </h2>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12 text-justify">Get In touch through Email/Phone numbers</div>
+                                            <div class="col-md-12 text-justify">
+                                                Get In touch through Email/Phone numbers
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-3 col-xs-3">
+                                                <i class="fa fa-edit fa-3x"></i>
+                                            </div>
+                                            <div class="col-md-9 col-xs-9">
+                                                <h2 class="hometopmargin">
+                                                    <a  href="searchFranchise.html">Franchise</a>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 text-justify">
+                                                Get in touch with your nearest franchise for customer support. We are also offering Franchise Opportunity to individuals passionate about helping people get married.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
-                            </div>
+                            <div class="col-md-12"></div>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -353,12 +264,9 @@
                                     <div class="col-md-12">
                                         <h4 class="sub_heading">Franchise</h4>
                                         <p class="text-justify">
-                                        Vivah-Propozal.com boasts a vast Franchise Network and continues to expand rapidly. 
-                                        Our franchises are strategically located in both metros and small towns, ensuring 
-                                        convenience for our customers. As profiles are uploaded through our franchise system, 
-                                        a majority of them undergo a thorough verification process. Our dedicated franchise owners 
-                                        provide personal attention and valuable advice regarding marriage proposals. Additionally, 
-                                        we offer pre-marriage and post-marriage counseling services to support our users in their journey.
+                                            JeevanMeet.com boasts a vast Franchise Network and continues to expand rapidly. Our franchises are strategically located in both metros and small towns, ensuring convenience for our customers. As profiles are uploaded through our franchise system, a majority
+                                            of them undergo a thorough verification process. Our dedicated franchise owners provide personal attention and valuable advice regarding marriage proposals. Additionally, we offer pre-marriage and post-marriage
+                                            counseling services to support our users in their journey.
                                         </p>
                                     </div>
                                 </div>
@@ -376,28 +284,30 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-md-2" style="margin-top: 15px;">
-                                            <img alt="wedding image" src="assets/weddingImages/c0152-devidas-naikwadi-and-neelam-jadhav.jpg" class="img-tumbnail">
+                                            <img alt="wedding image" src="asets/weddingImages/c0152-devidas-naikwadi-and-neelam-jadhav.jpg" class="img-thumbnail">
                                         </div>
                                         <div class="col-md-10 text-justify">
-                                           <div class="text-justify">
+                                            <p class="text-justify">
                                                 <div class="text-left">
-                                                    <h4 style="color: #B22222;">Devidas Naikwadi & Neelam Jadhav</h4>
+                                                    <h4 style="color:#B22222;">Devidas Naikwadi & Neelam Jadhav</h4>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-9 text-justify"  style="padding-top: 10px;">
-                                                <div>
-                                                    We Both are from Hindu Maratha Caste from Bhoom, Osmanabad and Barshi, Solapur. We were Married in Barshi, Solapur. Rahul Taware Sir was the Person who introduced our Families for our Marriage, He has good experience in arranging marraige. He had registered our profiles on Jeevanmeet.com, Which Works for&#8230;
-                                                    <ul class="list-inline">
-                                                        <a href="assets/ReadMoreStory/35-devidas-naikwadi-neelam-jadhav.html" class="text-primary">Read More...</a>
-                                                    </ul>
+                                                <div class="col-md-9 text-justify" style="padding-top: 10px;">
+                                                    <p>
+                                                        We Both are from Hindu Maratha Caste from Bhoom, Osmanabad and Barshi, Solapur. We were Married in Barshi, Solapur. Rahul Taware Sir was the Person who introduced our Families for our Marriage, He has good experience in arranging marraige. He had registered
+                                                        our profiles on Jeevanmeet.com, Which Works for&#8230;
+                                                        <ul class="list-inline">
+                                                            <li><a class="text-primary" href="#">Read More...</a></li>
+                                                        </ul>
+                                                        <!-- </p> -->
                                                 </div>
-                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">Read More Stories <span class="glyphicon glyphicon-chevron-right"></span></a>
+                                    <div class="text-right">
+                                        <a href="#">
+                                                Read More Stories
+                                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                            </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -405,78 +315,87 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <h4 class="sub_heading">About Vivah Propozal</h4>
-                            <p class="text-justify">VivahPropozal is Web based matrimonial service provider 
-                                serving Indian market
-                                from year 2023. Our vision is to make marriage search a easy and effortless process through our franchise network which can help finding life partner and get people married by working as proper mediator.
-                                The mission of VivahPropozal.com is to give a friendly atmosphere to the parents who are looking for in 
-                                law for there loved one.</p>
+        <div class="row" style="margin-bottom: 10px">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h4 class="sub_heading">About Vivah Propozal</h4>
+                                <p class="text-justify">JeevanMeet is Web based matrimonial service provider serving Indian market from year 2010. Our vision is to make marriage search a easy and effortless process through our franchise network which can help finding life partner
+                                    and get people married by working as proper mediator. The mission of JeevanMeet.com is to give a friendly atmosphere to the parents who are looking for in law for there loved one.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h4 class="sub_heading">Terms of Use</h4>
+                                <p>
+                                    <a title="Terms of Use" href="#">Terms and conditions</a>
+                                    <br>
+                                    <a title="Privacy Policy" href="#">Privacy Policy</a>
+                                    <br>
+                                    <a title="FAQ" href="#">FAQ</a>
+                                    <br>
+                                    <a title="Feedback" href="#">Feedback</a>
+                                    <br>
+                                </p>
+                                <br>
+                                <h4 class="sub_heading">Social Networking</h4>
+                                <p>
+                                    <a title="Vivah Propozal On Facebook" href="#" target="_blank">
+                                        <span class="fa-stack fa-lg">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                    </a>
+                                    <a title="Vivah Propozal On Twitter" href="#" target="_blank">
+                                        <span class="fa-stack fa-lg">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h4 class="sub_heading">Get in Touch</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <i class="fa fa-phone fa-fw"></i>
+                                        <strong>Phone : </strong> <a tel="+919970013272"> (+91) 8087409272</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="fa fa-envelope fa-fw"></i>
+                                        <strong>Email : </strong><a title="Email" href="mailto:support@jeevanmeet.com">support@jeevanmeet.com</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="fa fa-clock-o fa-fw"></i>
+                                        <strong>Timing : </strong> 10 AM to 6 PM
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <h4 class="sub_heading">
-                                Terms of Use
-                            </h4>
-                            <p>
-                                <a href="#" title="Term of Use">Terms and Conditions</a> <br/>
-                                <a href="#" title="Privacy Polocy">Privacy Policy</a><br/>
-                                <a href="#" title="FAQ">FAQ</a><br/>
-                                <a href="#" title="Feedback">Feedback</a><br/>
-                            </p><br/>
-                            <h4 class="sub_heading">Social Networking</h4>
-                            <p>
-                                <a href="#" title="Vivah Prapozal on facebook" target="_blank">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="#" title="Vivah Propozal on twitter" target="_blank">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </a>
-                            </p>
-                        </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class=" text-center">
+                            Copyright & ; 2010
+                            <a href="#">
+                                <strong>JeevanMeet</strong>
+                            </a>
+                            All Rights Reserved.
+                        </p>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <h4 class="sub_heading">Get in Touch</h4>
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <i class="fa fa-phone fa-fw"></i>
-                                    <strong>Phone:</strong><a tel="+919860860762">(+91) 9860860762</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <i class="fa fa-envelope fa-fw"></i>
-                                    <strong>Email:</strong><a href="mailto:support@vivah-propozal.com">support@vivah-propozal.com</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <i class="fa fa-clock-o fa-fw"></i>
-                                    <strong>Timing:</strong>10 AM to 6 PM
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="col-md-6 text-center">
+                        Design &amp; Developed By Sahyadri Infotech
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="text-center">Copyright &copy; 2023 <a href="#"><strong>Vivah Propozal</strong> All Rights Reserved.</a></p>
-                </div>
-                <div class="col-md-6 text-center">
-                    Design &amp; Developed by <strong>Codemaniac Technologies Pvt Ltd.</strong>
                 </div>
             </div>
         </div>

@@ -1,0 +1,42 @@
+<div class="row" style="margin-bottom: 10px;">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="#">
+                    <img alt="jeevanmeet - Matrimonials logo" class="img-responsive" src="assets/images/logo.png" />
+                </a>
+            </div>
+            <div class="col-md-4" style="margin-left: 0px">
+                <span class="headertop"> Get Married ! </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 hidden-sm hidden-xs">
+        <form [formGroup]="form_homepage_login" (ngSubmit)="onLoginSubmit(form_homepage_login)">
+            <div class="row">
+                <div class="col-md-3">
+                    <label class="control-label">Username</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" style="height: 28px !important" class="form-control" placeholder="Username"  tabindex="1" autofocus formControlName="txt_username" />
+                </div>
+            </div>
+            <div class="row" style="margin-top: 5px" >
+                <div class="col-md-3">
+                    <label class="control-label">Password</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="password" style="height: 28px !important" class="form-control" placeholder="Password" tabindex="2" formControlName="txt_password"/>
+                </div>
+                <div class="col-md-3">
+                    <input type="submit" value="Login" name="submit" style="line-height: 1.1" class="btn btn-success" tabindex="3" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <a href="#" tabindex="4">Forgot Password ?</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

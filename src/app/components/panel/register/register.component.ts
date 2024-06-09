@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Gender } from 'src/app/interfaces/gender';
+import { MartialStatus } from 'src/app/interfaces/martial-status';
+import { MotherTongue } from 'src/app/interfaces/mother-tongue';
+import { Religion } from 'src/app/interfaces/religion';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +13,21 @@ import { Gender } from 'src/app/interfaces/gender';
 export class RegisterComponent {
   isSubmitted: Boolean = false;
   genderList: Gender[] = [];
+  maritialStatus: MartialStatus[] = [];
+  motherTongueList: MotherTongue[] = [];
+  religionList: Religion[] = [];
+  casteList: Religion[] = [];
+  subCasteList: Religion[] = [];
+  stateList: Religion[] = [];
+  cityList:Religion[] = [];
+  countryList:Religion[] = [];
+  occupationList: Religion[] = [];
+  subOccupationList: Religion[] = [];
+  educationList: Religion[] = [];
+  familyValuesList: Religion[] = [];
+  familyStatusList: Religion[] = [];
+  familyTypeList: Religion[] = [];
+
   form_register: FormGroup = this.fb.group({
     txt_username: ["", Validators.required],
     txt_email: ["", Validators.required],

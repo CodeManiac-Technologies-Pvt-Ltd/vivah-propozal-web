@@ -16,6 +16,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatInputModule } from '@angular/material/input'
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { SearchComponent } from './components/panel/search/search.component';
+import { LoginComponent } from './components/panel/login/login.component';
+import { ProfilelistComponent } from './components/user/profilelist/profilelist.component';
+import { ViewComponent as ProfileViewComponent } from './components/profile/view/view.component';
+import { SubscriptionlistComponent } from './components/user/subscriptionlist/subscriptionlist.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +30,11 @@ import { SearchComponent } from './components/panel/search/search.component';
     HeaderComponent,
     FooterComponent,
     RegisterComponent,
-    HeaderComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent,
+    ProfilelistComponent,
+    ProfileViewComponent,
+    SubscriptionlistComponent
   ],
   imports: [
     BrowserModule,

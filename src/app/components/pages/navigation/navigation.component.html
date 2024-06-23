@@ -1,79 +1,185 @@
 <div class="row">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a [routerLink]="['/']" class="navbar-brand">Home</a>
+    <ng-container *ngIf="isUserLoggedIn then userNagivation else navigation"></ng-container>
+    <ng-template #navigation>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a [routerLink]="['/']" class="navbar-brand">Home</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a [routerLink]="['/search']">Search</a>
+                        </li>
+                        <li> &nbsp; &nbsp;</li>
+
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Search <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Regular Search</a></li>
+                                <li><a href="#">Advance Search</a></li>
+                                <li><a href="#">InterFaith Search</a></li>
+                                <li><a href="#">ID Search</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Franchise <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Find Franchise</a></li>
+                                <li><a href="#">Franchise Help</a></li>
+                                <li><a href="#">Franchise Opportunities</a></li>
+    
+                            </ul>
+                        </li>
+                        <li><a href="#">Brides</a></li>
+                        <li><a href="#">Grooms</a></li> -->
+
+                        <li>
+                            <a [routerLink]="['/subscibelist']" class="upper-top">Subscriptions</a>
+                        </li>
+                        <li> &nbsp; &nbsp;</li>
+                        <li>
+                            <a href="#" class="upper-top">Career</a>
+                        </li>
+                        <li> &nbsp; &nbsp;</li>
+                        <li>
+                            <a [routerLink]="['/contactUs']">Contact Us</a>
+                        </li>
+                        <li> &nbsp; &nbsp;</li>
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Blog<span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Success Story</a></li>
+                                <li><a href="#">Tell your story</a></li>
+                                <li><a href="#">Blogs</a></li>
+    
+                            </ul>
+                        </li> -->
+                        <li>
+                            <a [routerLink]="['/login']">Login</a>
+                        </li>
+                        <li> &nbsp; </li>
+                        <!-- <li>
+                            <a title="Feedback" href="#">
+                                Feedback
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a [routerLink]="['/search']">Search</a>
-                    </li>
-                    <li> &nbsp; &nbsp;</li>
+        </nav>
+    </ng-template>
+    <ng-template #userNagivation>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a [routerLink]="['/']" class="navbar-brand">Home</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#" class="upper-top">My Profile</a>
+                        </li>
+                        <li class="dropdown open">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Matched Profiles
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="active">
+                                    <a class="active">Match requests</a>
+                                </li>
+                                <li>
+                                    <a>Accepted requests</a>
+                                </li>
+                                <li>
+                                    <a>Rejected requests</a>
+                                </li>
+                                <li>
+                                    <a>Received requests</a>
+                                </li>
+                                <li>
+                                    <a>Sent requests</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="upper-top">Viewed Profiles</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/search']">Search</a>
+                        </li>
+                        <li> &nbsp; &nbsp;</li>
 
-                    <!-- <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                            aria-expanded="false">Search <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Regular Search</a></li>
-                            <li><a href="#">Advance Search</a></li>
-                            <li><a href="#">InterFaith Search</a></li>
-                            <li><a href="#">ID Search</a></li>
-                        </ul>
-                    </li> -->
-                    <!-- <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Franchise <span
-                                class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Find Franchise</a></li>
-                            <li><a href="#">Franchise Help</a></li>
-                            <li><a href="#">Franchise Opportunities</a></li>
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Search <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Regular Search</a></li>
+                                <li><a href="#">Advance Search</a></li>
+                                <li><a href="#">InterFaith Search</a></li>
+                                <li><a href="#">ID Search</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Franchise <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Find Franchise</a></li>
+                                <li><a href="#">Franchise Help</a></li>
+                                <li><a href="#">Franchise Opportunities</a></li>
+    
+                            </ul>
+                        </li>
+                        <li><a href="#">Brides</a></li>
+                        <li><a href="#">Grooms</a></li> -->
 
-                        </ul>
-                    </li>
-                    <li><a href="#">Brides</a></li>
-                    <li><a href="#">Grooms</a></li> -->
-
-                    <li>
-                        <a href="#" class="upper-top">Subscriptions</a>
-                    </li>
-                    <li> &nbsp; &nbsp;</li>
-                    <li>
-                        <a href="#" class="upper-top">Career</a>
-                    </li>
-                    <li> &nbsp; &nbsp;</li>
-                    <li>
-                        <a [routerLink]="['/contactUs']">Contact Us</a>
-                    </li>
-                    <li> &nbsp; &nbsp;</li>
-                    <!-- <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Blog<span
-                                class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Success Story</a></li>
-                            <li><a href="#">Tell your story</a></li>
-                            <li><a href="#">Blogs</a></li>
-
-                        </ul>
-                    </li> -->
-                    <li>
-                        <a href="#">Login</a>
-                    </li>
-                    <li> &nbsp; </li>
-                    <!-- <li>
-                        <a title="Feedback" href="#">
-                            Feedback
-                        </a>
-                    </li> -->
-                </ul>
+                        <li>
+                            <a [routerLink]="['/subscibelist']" class="upper-top">Subscriptions</a>
+                        </li>
+                        <li> &nbsp; &nbsp;</li>
+                        <li> &nbsp; &nbsp;</li>
+                        <li>
+                            <a [routerLink]="['/contactUs']">Contact Us</a>
+                        </li>
+                        <li> &nbsp; &nbsp;</li>
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Blog<span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Success Story</a></li>
+                                <li><a href="#">Tell your story</a></li>
+                                <li><a href="#">Blogs</a></li>
+    
+                            </ul>
+                        </li> -->
+                        <li>
+                            <a [routerLink]="['/login']">Logout</a>
+                        </li>
+                        <li> &nbsp; </li>
+                        <!-- <li>
+                            <a title="Feedback" href="#">
+                                Feedback
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </ng-template>
 </div>

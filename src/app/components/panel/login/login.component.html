@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row" style="margin-top: 10px">
+    </div>
+    <app-header></app-header>
+    <app-navigation></app-navigation>
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">User Login</div>
+                        <div class="panel-body">
+                            <form [formGroup]="login_form" (ngSubmit)="onSubmit(login_form)">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label class="control-label">Username</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" formControlName="login_user" class="form-control"
+                                                placeholder="Username" tabindex="1" autofocus />
+                                            <div class="err_span"
+                                                *ngIf="isSubmitted && login_form_controls['login_user'].errors">
+                                                <div *ngIf="login_form_controls['login_user'].errors['required']">
+                                                    Username
+                                                    required.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="" class="control-label">Password</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="password" formControlName="login_pass" class="form-control"
+                                                placeholder="password" tabindex="2">
+                                            <div class="err_span"
+                                                *ngIf="isSubmitted && login_form_controls['login_pass'].errors">
+                                                <div *ngIf="login_form_controls['login_pass'].errors['required']">
+                                                    Password required.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 5px">
+                                    <div class="col-md-6 col-md-offset-3 text-center">
+                                        <input type="submit" value="Login" class="btn btn-success" tabindex="3">
+                                        <input type="reset" value="Reset" class="btn btn-default" tabindex="4">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row" style="margin-top: 5px">
+                                <div class="col-md-6 col-md-offset-3 text-center">
+                                    <a>Forget Password ?</a>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 5px">
+                                <div class="col-md-6 col-md-offset-3 text-center">
+                                    Don't Have a account <a [routerLink]="['/register']">register here</a>
+                                </div>
+                            </div>
+                            <!-- <a>Forget Password ?</a>
+                            Don't Have a account <a [routerLink]="['/register']">register</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

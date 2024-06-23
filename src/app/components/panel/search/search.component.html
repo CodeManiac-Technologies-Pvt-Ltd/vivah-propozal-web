@@ -19,8 +19,7 @@
                             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
                                 aria-labelledby="headingOne">
                                 <div class="panel-body">
-                                    <form action="https://jeevanmeet.com/idSearch" class="" id="regform" method="get"
-                                        role="form" accept-charset="utf-8">
+                                    <form role="form" [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm)">
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-md-3">

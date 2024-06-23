@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatInputModule } from '@angular/material/input'
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { SearchComponent } from './components/panel/search/search.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     NavigationComponent,
     HeaderComponent,
     FooterComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

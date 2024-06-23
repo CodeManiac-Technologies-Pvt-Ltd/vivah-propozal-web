@@ -11,7 +11,8 @@
                             <div class="panel-body">
                                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                                     <ol class="carousel-indicators">
-                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                                        </li>
                                         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                                         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                                         <li data-target="#carousel-example-generic" data-slide-to="3"></li>
@@ -29,7 +30,8 @@
                                             <img src="assets/banner/img2.jpg" alt="" class="img-responsive">
                                             <div class="carousel-caption">
                                                 <h1>Safe &amp; Secure</h1>
-                                                <p>We keep data authentic and secure keeping in mind the importance of the privacy of the members</p>
+                                                <p>We keep data authentic and secure keeping in mind the importance of
+                                                    the privacy of the members</p>
                                                 <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
                                             </div>
                                         </div>
@@ -50,11 +52,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                    <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                                        data-slide="prev">
                                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
                                     </a>
-                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                    <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                                        data-slide="next">
                                         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                         <span class="sr-only">Next</span>
                                     </a>
@@ -67,26 +71,33 @@
                             <div class="panel-body">
                                 <div role="tabpanel">
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">ID Search</a></li>
-                                        <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Quick Search</a></li>
+                                        <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab"
+                                                data-toggle="tab">ID Search</a></li>
+                                        <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1"
+                                                role="tab" data-toggle="tab">Quick Search</a></li>
                                     </ul>
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane active" id="tab1">
                                             <div class="panel" style="margin-bottom : 0px;">
                                                 <div class="panel-body" style="padding-bottom: 0px">
-                                                    <form [formGroup]="form_regular_search" (ngSubmit)="onRegularSearch(form_regular_search)">
+                                                    <form [formGroup]="form_regular_search"
+                                                        (ngSubmit)="onRegularSearch(form_regular_search)">
                                                         <div class="from-group">
                                                             <div class="row">
                                                                 <div class="col-md-3">
-                                                                    <label for="male" class="control-label">Select</label>
+                                                                    <label for="male"
+                                                                        class="control-label">Select</label>
                                                                 </div>
                                                                 <div class="col-md-9">
                                                                     <div class="col-md-6">
-                                                                        <input type="radio" class="rinline" value="1" formControlName="gender" />
+                                                                        <input type="radio" class="rinline" value="1"
+                                                                            formControlName="gender" />
                                                                         <label for="male" class="inline">Groom</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        <input type="radio" class="inline" value="2" formControlName="gender" checked="checked" />
+                                                                        <input type="radio" class="inline" value="2"
+                                                                            formControlName="gender"
+                                                                            checked="checked" />
                                                                         <label for="female" class="inline">Bride</label>
                                                                     </div>
                                                                 </div>
@@ -99,7 +110,10 @@
                                                                     <label class="control-label">Religion</label>
                                                                 </div>
                                                                 <div class="col-md-9">
-                                                                    <ng-multiselect-dropdown [settings]="dropDownSettings" [data]="religion_list" formControlName="religionDropDown">
+                                                                    <ng-multiselect-dropdown
+                                                                        [settings]="dropDownSettings"
+                                                                        [data]="religion_list"
+                                                                        formControlName="religionDropDown">
                                                                     </ng-multiselect-dropdown>
                                                                 </div>
                                                             </div>
@@ -108,10 +122,14 @@
                                                         <div class="from-group">
                                                             <div class="row">
                                                                 <div class="col-md-3">
-                                                                    <label for="part_caste_multipl" class="control-label">Caste</label>
+                                                                    <label for="part_caste_multipl"
+                                                                        class="control-label">Caste</label>
                                                                 </div>
                                                                 <div class="col-md-9">
-                                                                    <ng-multiselect-dropdown [settings]="dropDownSettings" [data]="caste_list" formControlName="casteDropDown">
+                                                                    <ng-multiselect-dropdown
+                                                                        [settings]="dropDownSettings"
+                                                                        [data]="caste_list"
+                                                                        formControlName="casteDropDown">
                                                                     </ng-multiselect-dropdown>
                                                                     <input type="hidden" name="submit" value="Search" />
                                                                     <input type="hidden" name="page_number" value="" />
@@ -123,7 +141,8 @@
                                                         <div class="form-group">
                                                             <div class="row">
                                                                 <div class="col-md-12 text-center">
-                                                                    <input type="submit" class="btn btn-default" value="Search" />
+                                                                    <input type="submit" class="btn btn-default"
+                                                                        value="Search" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -134,14 +153,17 @@
                                         <div role="tabpanel" class="tab-pane" id="tab2">
                                             <div class="panel">
                                                 <div class="panel-body">
-                                                    <form [formGroup]="form_id_search" (ngSubmit)="onIdSearch(form_id_search)">
+                                                    <form [formGroup]="form_id_search"
+                                                        (ngSubmit)="onIdSearch(form_id_search)">
                                                         <div class="from-group">
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <label class="control-label">Profile Id</label>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <input type="text" formControlName="profile_id" placeholder="Enter Profile Id" class="form-control" />
+                                                                    <input type="text" formControlName="profile_id"
+                                                                        placeholder="Enter Profile Id"
+                                                                        class="form-control" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -149,7 +171,8 @@
                                                         <div class="form-group">
                                                             <div class="row">
                                                                 <div class="col-md-12 text-center">
-                                                                    <input type="submit" class="btn btn-default" value="Search" />
+                                                                    <input type="submit" class="btn btn-default"
+                                                                        value="Search" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -181,7 +204,8 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12 text-justify">
-                                                Paid Members to get Additional Contacts of 24 Profiles absolutely Free, Yearly.
+                                                Paid Members to get Additional Contacts of 24 Profiles absolutely Free,
+                                                Yearly.
                                             </div>
                                         </div>
                                     </div>
@@ -240,13 +264,15 @@
                                             </div>
                                             <div class="col-md-9 col-xs-9">
                                                 <h2 class="hometopmargin">
-                                                    <a  href="searchFranchise.html">Franchise</a>
+                                                    <a href="searchFranchise.html">Franchise</a>
                                                 </h2>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12 text-justify">
-                                                Get in touch with your nearest franchise for customer support. We are also offering Franchise Opportunity to individuals passionate about helping people get married.
+                                                Get in touch with your nearest franchise for customer support. We are
+                                                also offering Franchise Opportunity to individuals passionate about
+                                                helping people get married.
                                             </div>
                                         </div>
                                     </div>
@@ -264,8 +290,13 @@
                                     <div class="col-md-12">
                                         <h4 class="sub_heading">Franchise</h4>
                                         <p class="text-justify">
-                                            JeevanMeet.com boasts a vast Franchise Network and continues to expand rapidly. Our franchises are strategically located in both metros and small towns, ensuring convenience for our customers. As profiles are uploaded through our franchise system, a majority
-                                            of them undergo a thorough verification process. Our dedicated franchise owners provide personal attention and valuable advice regarding marriage proposals. Additionally, we offer pre-marriage and post-marriage
+                                            JeevanMeet.com boasts a vast Franchise Network and continues to expand
+                                            rapidly. Our franchises are strategically located in both metros and small
+                                            towns, ensuring convenience for our customers. As profiles are uploaded
+                                            through our franchise system, a majority
+                                            of them undergo a thorough verification process. Our dedicated franchise
+                                            owners provide personal attention and valuable advice regarding marriage
+                                            proposals. Additionally, we offer pre-marriage and post-marriage
                                             counseling services to support our users in their journey.
                                         </p>
                                     </div>
@@ -284,29 +315,34 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-md-2" style="margin-top: 15px;">
-                                            <img alt="wedding image" src="asets/weddingImages/c0152-devidas-naikwadi-and-neelam-jadhav.jpg" class="img-thumbnail">
+                                            <img alt="wedding image"
+                                                src="asets/weddingImages/c0152-devidas-naikwadi-and-neelam-jadhav.jpg"
+                                                class="img-thumbnail">
                                         </div>
                                         <div class="col-md-10 text-justify">
                                             <p class="text-justify">
-                                                <div class="text-left">
-                                                    <h4 style="color:#B22222;">Devidas Naikwadi & Neelam Jadhav</h4>
-                                                </div>
-                                                <div class="col-md-9 text-justify" style="padding-top: 10px;">
-                                                    <p>
-                                                        We Both are from Hindu Maratha Caste from Bhoom, Osmanabad and Barshi, Solapur. We were Married in Barshi, Solapur. Rahul Taware Sir was the Person who introduced our Families for our Marriage, He has good experience in arranging marraige. He had registered
-                                                        our profiles on Jeevanmeet.com, Which Works for&#8230;
-                                                        <ul class="list-inline">
-                                                            <li><a class="text-primary" href="#">Read More...</a></li>
-                                                        </ul>
-                                                        <!-- </p> -->
-                                                </div>
+                                            <div class="text-left">
+                                                <h4 style="color:#B22222;">Devidas Naikwadi & Neelam Jadhav</h4>
+                                            </div>
+                                            <div class="col-md-9 text-justify" style="padding-top: 10px;">
+                                                <p>
+                                                    We Both are from Hindu Maratha Caste from Bhoom, Osmanabad and
+                                                    Barshi, Solapur. We were Married in Barshi, Solapur. Rahul Taware
+                                                    Sir was the Person who introduced our Families for our Marriage, He
+                                                    has good experience in arranging marraige. He had registered
+                                                    our profiles on Jeevanmeet.com, Which Works for&#8230;
+                                                <ul class="list-inline">
+                                                    <li><a class="text-primary" href="#">Read More...</a></li>
+                                                </ul>
+                                                <!-- </p> -->
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="text-right">
                                         <a href="#">
-                                                Read More Stories
-                                                <span class="glyphicon glyphicon-chevron-right"></span>
-                                            </a>
+                                            Read More Stories
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -322,8 +358,12 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <h4 class="sub_heading">About Vivah Propozal</h4>
-                                <p class="text-justify">JeevanMeet is Web based matrimonial service provider serving Indian market from year 2010. Our vision is to make marriage search a easy and effortless process through our franchise network which can help finding life partner
-                                    and get people married by working as proper mediator. The mission of JeevanMeet.com is to give a friendly atmosphere to the parents who are looking for in law for there loved one.
+                                <p class="text-justify">JeevanMeet is Web based matrimonial service provider serving
+                                    Indian market from year 2010. Our vision is to make marriage search a easy and
+                                    effortless process through our franchise network which can help finding life partner
+                                    and get people married by working as proper mediator. The mission of JeevanMeet.com
+                                    is to give a friendly atmosphere to the parents who are looking for in law for there
+                                    loved one.
                                 </p>
                             </div>
                         </div>
@@ -347,14 +387,14 @@
                                 <p>
                                     <a title="Vivah Propozal On Facebook" href="#" target="_blank">
                                         <span class="fa-stack fa-lg">
-                                                <i class="fa fa-circle fa-stack-2x"></i>
-                                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                            </span>
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                        </span>
                                     </a>
                                     <a title="Vivah Propozal On Twitter" href="#" target="_blank">
                                         <span class="fa-stack fa-lg">
-                                                <i class="fa fa-circle fa-stack-2x"></i>
-                                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
                                 </p>
@@ -372,7 +412,8 @@
                                     </li>
                                     <li class="list-group-item">
                                         <i class="fa fa-envelope fa-fw"></i>
-                                        <strong>Email : </strong><a title="Email" href="mailto:support@jeevanmeet.com">support@jeevanmeet.com</a>
+                                        <strong>Email : </strong><a title="Email"
+                                            href="mailto:support&amp;vivahpropozal.com">support&amp;vivahpropozal.com</a>
                                     </li>
                                     <li class="list-group-item">
                                         <i class="fa fa-clock-o fa-fw"></i>

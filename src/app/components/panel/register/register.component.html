@@ -7,8 +7,7 @@
         <div class="col-md-12"></div>
     </div>
     <h2 class="main1">Follow Few Steps to Register</h2>
-    <form [formGroup]="form_register" (ngSubmit)="on_register_submit" enctype="multipart/form-data"
-        accept-charset="utf-8">
+    <form [formGroup]="form_register" (ngSubmit)="on_register_submit(form_register)" enctype="multipart/form-data">
         <div class="borderbox">
             <div class="registration">
                 <h5 class="heading">Personal Information</h5>
@@ -108,10 +107,7 @@
                                     <label class="inline">Date of Birth<span class="err_span">&nbsp;*</span></label>
                                 </div>
                                 <div class="col-md-4">
-                                    <input matInput [matDatepicker]="picker" formControlName="date_of_birth" />
-                                    <mat-hint>MM/DD/YYYY</mat-hint>
-                                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                                    <mat-datepicker #picker></mat-datepicker>
+                                    <input type="date" formControlName="date_of_birth" />
                                     <div class="err_span"
                                         *ngIf="isSubmitted && form_register_controls['date_of_birth'].errors">
                                         <div *ngIf="form_register_controls['date_of_birth'].errors['required']">Date of

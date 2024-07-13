@@ -20,6 +20,7 @@ import { LoginComponent } from './components/panel/login/login.component';
 import { ProfilelistComponent } from './components/user/profilelist/profilelist.component';
 import { ViewComponent as ProfileViewComponent } from './components/profile/view/view.component';
 import { SubscriptionlistComponent } from './components/user/subscriptionlist/subscriptionlist.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { SubscriptionlistComponent } from './components/user/subscriptionlist/su
     BrowserAnimationsModule,
     MatDatepickerModule,
     MatInputModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

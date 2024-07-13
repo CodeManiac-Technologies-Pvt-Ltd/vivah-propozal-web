@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { MessageOption } from 'src/app/interfaces/message-option';
+import { Option } from 'src/app/interfaces/option';
+import { ToastService } from 'src/app/service/toast.service';
+import { ApiService } from 'src/app/servies/api.service';
 
 @Component({
   selector: 'app-hompage',
@@ -20,12 +24,15 @@ export class HompageComponent {
     gender: ["1", Validators.required],
     religionDropDown: [this.religion_list],
     casteDropDown: [ this.caste_list]
-  })
+  });
   form_id_search: FormGroup = this.fb.group({
     profile_id: ["", Validators.required]
-  })
+  });
+  userOptions: MessageOption;
 
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder, private apiService: ApiService, private toast: ToastService){
+    this.userOptions = JSON.parse(window.localStorage.getItem("options") || "{}");
+  }
 
   ngOnInit() {
     this.dropDownSettings = {
@@ -37,6 +44,7 @@ export class HompageComponent {
       noDataAvailablePlaceholderText:"There is no items available to show",
       allowSearchFilter: true
     }
+    this.get_user_option();
   }
 
   get form_hompage_login_controls () {
@@ -79,5 +87,15 @@ export class HompageComponent {
   }
   onCasteUnSelectAll() {
     console.log('onUnSelectAll fires');
+  }
+
+  get_user_option() {
+    this.apiService.getUserOptions().subscribe(api_response => {
+      const options: MessageOption = api_response.message;
+
+      localStorage.setItem('options', JSON.stringify(options));
+
+      this.userOptions = options;
+    })
   }
 }
